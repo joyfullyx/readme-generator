@@ -4,10 +4,7 @@ const fs = require('fs');
 const generate = require('../develop/utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-const questions = [];
-
-inquirer
-    .prompt([
+const questions =[
         {
             type: 'input',
             message: 'What is the title of your project?',
@@ -54,11 +51,47 @@ inquirer
             message: 'What is your email address?',
             name: 'email',
         }
-    ]).then(data => {
-    console.log(data)
+    ]
+    inquirer.prompt(questions).then(answers => {
+    console.log(answers)
     // TODO: Create a function to write README file
-    // function writeToFile(fileName, data) {}
-    fs.writeFile('README.md', JSON.stringify(data, null, 4), (err) => {
+    // function writeToFile(fileName, answers) {
+        const readMeOutput = `
+# ${answers.title}
+
+## Description
+    ${answers.description}
+
+##Table of Contents
+1. [Description](#description)
+2. [Install](#install)
+3. [Usage](#usage)
+4. [Contributors](#contributors)
+5. [Test](#test)
+6. ${renderLicenseLink(license)} //??????
+7. [Username](#username)
+8. [Email](#email)
+
+## Installation
+    ${answers.install}
+
+## Usage
+    ${answers.usage}
+
+## License
+    ${answers.license}
+
+## Contributing
+    ${answers.contributors}
+
+## Tests
+    ${answers.test}
+
+## Questions
+    [Github](https://github.com/${answers.username})
+    [E-mail](${answers.email})
+`;
+    fs.writeFile('README.md', readMeOutput, (err) => {
         if (err) {
             throw err
         } else {
@@ -66,9 +99,7 @@ inquirer
         }
     })
 });
-
-        
-        
+       
 // TODO: Create a function to initialize app
 function init() {
     // use inquirer 

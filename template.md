@@ -1,8 +1,7 @@
-
-# j
+# ${data.title}
 
 ## Description
-    j
+${answers.description}
 
 ##Table of Contents
 1. [Description](#description)
@@ -15,20 +14,20 @@
 8. [Email](#email)
 
 ## Installation
-    j
+${answers.install}
 
 ## Usage
-    j
+${answers.usage}
 
 ## License
-    Apache 2.0
+${answers.license}
 
 ## Contributing
-    j
+${answers.contributors}
 
 ## Tests
-    j
+${answers.test}
 
 ## Questions
-    [Github](https://github.com/j)
-    [E-mail](j)
+${answers.username}
+${answers.email}
