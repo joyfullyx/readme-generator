@@ -36,22 +36,23 @@ function renderLicenseLink(data) {
 
 // TODO: Create a function that returns the license section of README (create short blurb in license section if license- if not, no license section)
 // If there is no license, return an empty string
-function renderLicenseSection(data) {
-  const noLicenseBlurb = '';
+function renderLicenseSection(license) {
 
-  if (data.license === 'MIT') {
+  if (license === 'MIT') {
     return `License: MIT`
-  } else if (data.licence === 'Apache 2.0') {
+  } else if (license === 'Apache 2.0') {
     return `License: Apache 2.0`
-  } else if (data.licence === 'GNU GPL v3') {
+  } else if (license === 'GNU GPL v3') {
     return `License: GNU GPL v3`
-  } else if (data.licence === 'IBM Public License v1.0') {
+  } else if (license === 'IBM Public License v1.0') {
     return `License: IBM Public License v1.0`
-  } else if (data.licence === 'Mozilla Public License 2.0') {
+  } else if (license === 'Mozilla Public License 2.0') {
     return `Mozilla Public License 2.0`
-  } else if (data.licence === 'Perl') {
+  } else if (license === 'Perl') {
     return `License: Perl`
-  
+  } else {
+    return '';
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -82,6 +83,7 @@ ${data.usage}
 
 ${data.license !== 'N/A'? '## License': ''}
 ${data.license !== 'N/A'? renderLicenseLink(data.license): ''}
+${data.license !== 'N/A'? renderLicenseSection(data.license): ''}
 
 ## Contributing
 ${data.contributors}

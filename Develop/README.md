@@ -1,10 +1,10 @@
 
-# f
+# d
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-    f
+d
 
 ## Table of Contents
 1. [Description](#description)
@@ -17,21 +17,22 @@
 8. [License](#license)
 
 ## Installation
-    f
+d
 
 ## Usage
-    f
+d
 
 ## License
 
+License: MIT
 
 ## Contributing
-    f
+d
 
 ## Tests
-    f
+d
 
 ## Questions
-[Github](https://github.com/f)
+[Github](https://github.com/d)
 
-[E-mail](mailto:)
+[E-mail](mailto:d)
