@@ -33,12 +33,12 @@ const questions =[
         {
             type: 'input',
             message: 'Are there any tests? If so, what are the guidelines for testing?',
-            name: 'test',
+            name: 'test', 
         },
         {
             type: 'list',
             message: 'Select a license for your project:',
-            choices: ['MIT', 'Apache 2.0', 'GNU GPL v3', 'IBM Public License v1.0', 'Mozilla Public License 2.0', 'Perl'],
+            choices: ['MIT', 'Apache 2.0', 'GNU GPL v3', 'IBM Public License v1.0', 'Mozilla Public License 2.0', 'Perl', 'N/A'],
             name: 'license',
         },
         {
@@ -56,42 +56,43 @@ const questions =[
     console.log(answers)
     // TODO: Create a function to write README file
     // function writeToFile(fileName, answers) {
-        const readMeOutput = `
-# ${answers.title}
+//         const readMeOutput = ` 
+// // # ${answers.title}
 
-## Description
-    ${answers.description}
+// // ## Description
+// //     ${answers.description}
 
-##Table of Contents
-1. [Description](#description)
-2. [Install](#install)
-3. [Usage](#usage)
-4. [Contributors](#contributors)
-5. [Test](#test)
-6. ${renderLicenseLink(license)} //??????
-7. [Username](#username)
-8. [Email](#email)
+// // ##Table of Contents
+// // 1. [Description](#description)
+// // 2. [Install](#install)
+// // 3. [Usage](#usage)
+// // 4. [Contributors](#contributors)
+// // 5. [Test](#test)
+// // 6. [License](#license) //??????
+// // 7. [Username](#username)
+// // 8. [Email](#email)
 
-## Installation
-    ${answers.install}
+// // ## Installation
+// //     ${answers.install}
 
-## Usage
-    ${answers.usage}
+// // ## Usage
+// //     ${answers.usage}
 
-## License
-    ${answers.license}
+// // ## License
+// //     ${answers.license}
 
-## Contributing
-    ${answers.contributors}
+// // ## Contributing
+// //     ${answers.contributors}
 
-## Tests
-    ${answers.test}
+// // ## Tests
+// //     ${answers.test}
 
-## Questions
-    [Github](https://github.com/${answers.username})
-    [E-mail](${answers.email})
-`;
-    fs.writeFile('README.md', readMeOutput, (err) => {
+// // ## Questions
+// // [Github](https://github.com/${answers.username})
+
+// // [E-mail](mailto:${answers.email})
+// // `;
+    fs.writeFile('README.md', generate(answers), (err) => {
         if (err) {
             throw err
         } else {
